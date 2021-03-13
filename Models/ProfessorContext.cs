@@ -10,5 +10,6 @@ namespace lab11_solution.Models
 		{
 		}
 		public DbSet<Professor> Professor {get; set;}
+		public DbSet<Course> Course {get; set;}
 	}
 }

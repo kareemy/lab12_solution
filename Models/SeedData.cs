@@ -21,11 +21,18 @@ namespace lab11_solution.Models
                 context.Professor.AddRange(
                     new Professor { 
                         FirstName = "Kareem", 
-                        LastName = "Dana"
+                        LastName = "Dana",
+                        Courses = new List<Course> {
+                            new Course {Description = "CIDM 3312"}
+                        }
                     },
                     new Professor { 
                         FirstName = "Jeff", 
-                        LastName = "Babb"
+                        LastName = "Babb",
+                        Courses = new List<Course> {
+                            new Course {Description = "CIDM 4382"},
+                            new Course {Description = "CIDM 4390"}
+                        }
                     },
                     new Professor { FirstName = "Sean", LastName = "Humpherys" }
                 );
