@@ -1,0 +1,33 @@
+@page
+@model ProfessorModel
+@{
+    ViewData["Title"] = "Professors";
+}
+
+<!-- Step 9: Create form with bootstrap style HTML -->
+<h3>Professors</h3>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div class="form-group">
+                <!-- label and asp-for tags are for Extra Credit Step 10 -->
+                <!-- asp-for connects the drop down to our BindProperty variable in Page Model -->
+                <!-- select tag and asp-items attribute fill in the selectlist drop down. Required for step 9 -->
+                <label asp-for="Professor.ProfessorId"></label>
+                <select asp-for="Professor.ProfessorId" asp-items="Model.ProfessorDropDown" class="form-control">
+                    <option value="">-- Select Professor --</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Submit" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<hr />
+<!-- Extra credit step 10. Display the selected professor -->
+@if (Model.Professor != null)
+{
+    <p>You selected @Model.Professor.FirstName @Model.Professor.LastName</p>
+}
